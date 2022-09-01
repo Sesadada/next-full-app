@@ -9,7 +9,7 @@ import Link from 'next/link';
 const Home: NextPageWithLayout = () => {
   const { locale } = useRouter();
   return (
-    <section>
+    <section className="">
       <Head>
         <title>Google</title>
         <meta name="google search" content="google search page" />

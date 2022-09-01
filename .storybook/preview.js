@@ -1,6 +1,6 @@
 import * as NextImage from 'next/image';
 import '../styles/globals.css';
-
+import { AuthProvider } from '../context/AuthContext';
 const BREAKPOINTS_INT = {
   xs: 375,
   sm: 600,
@@ -42,3 +42,11 @@ export const parameters = {
     },
   },
 };
+
+export const decorators = [
+  (Story) => (
+    <AuthProvider>
+      <Story />
+    </AuthProvider>
+  ),
+];
