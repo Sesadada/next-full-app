@@ -3,8 +3,11 @@ import Image from 'next/image';
 import PrimaryLayout from '../components/layouts/primary/PrimaryLayout';
 import Search from '../components/utility/search/Search';
 import { NextPageWithLayout } from './page';
+import { useRouter } from 'next/router';
+import Link from 'next/link';
 
 const Home: NextPageWithLayout = () => {
+  const { locale } = useRouter();
   return (
     <section>
       <Head>
@@ -21,6 +24,12 @@ const Home: NextPageWithLayout = () => {
           priority
         />
         <Search />
+        <p>
+          Google offered in:{' '}
+          <Link href="/" locale={locale === 'en' ? 'fr' : 'en'}>
+            <a className="underline text-blue-600">Français</a>
+          </Link>
+        </p>
       </div>
     </section>
   );
